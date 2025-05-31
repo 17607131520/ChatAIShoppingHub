@@ -1,24 +1,43 @@
 import React from 'react';
-import { View, Text, SafeAreaView } from 'react-native';
-// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-// import TaskHome from "./pages/Home"
+import { SafeAreaView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Home from './pages/Home';
+import Profile from './pages/Profile';
 import styles from './app.style';
-// const Tab = createBottomTabNavigator()
+
+const Tab = createBottomTabNavigator();
 
 const App: React.FC = () => {
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.box}>
-        <Text>Hello World</Text>
-      </View>
-      {/* <Tab.Navigator>
-      <Tab.Screen
-            name="TaskHome"
-            component={TaskHome}
-            options={{ headerShown: false, title: '首页' }}
+    <NavigationContainer>
+      <SafeAreaView style={styles.container}>
+        <Tab.Navigator
+          screenOptions={{
+            headerShown: false,
+            tabBarActiveTintColor: '#1890ff',
+            tabBarInactiveTintColor: '#999',
+          }}
+        >
+          <Tab.Screen
+            name="Home"
+            component={Home}
+            options={{
+              title: '首页',
+              tabBarLabel: '首页',
+            }}
           />
-      </Tab.Navigator> */}
-    </SafeAreaView>
+          <Tab.Screen
+            name="Profile"
+            component={Profile}
+            options={{
+              title: '我的',
+              tabBarLabel: '我的',
+            }}
+          />
+        </Tab.Navigator>
+      </SafeAreaView>
+    </NavigationContainer>
   );
 };
 

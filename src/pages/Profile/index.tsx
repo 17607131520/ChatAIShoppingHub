@@ -2,12 +2,12 @@ import React from 'react';
 import { View, Text } from 'react-native';
 import styles from './style';
 
-const Home: React.FC = () => {
+const Profile: React.FC = () => {
   return (
     <View style={styles.container}>
-      <Text>首页</Text>
+      <Text>个人中心</Text>
     </View>
   );
 };
 
-export default Home;
+export default Profile; 
