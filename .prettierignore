@@ -1,0 +1,16 @@
+# 构建输出
+build/
+dist/
+coverage/
+
+# 依赖
+node_modules/
+
+# 缓存
+.cache/
+.npm/
+
+# 其他
+*.log
+*.lock
+.DS_Store 
